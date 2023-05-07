@@ -1,7 +1,7 @@
 import React from "react";
 import LeftSide from "./Components/LeftSideUi/LeftSide";
 import RightSide from "./Components/RightSideUi/RightSide";
-import weatherBackground from "./Images/strom.jpg";
+import weatherBackground from "./Images/rain.jpg";
 
 const App = () => {
   return (
@@ -14,7 +14,7 @@ const App = () => {
       }}
     >
       <div className="weatherapp_sections">
-        <LeftSide currentWeatherImg={weatherBackground} />
+        <LeftSide weatherBackground={weatherBackground} />
         <RightSide />
       </div>
     </div>
