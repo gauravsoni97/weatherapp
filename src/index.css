@@ -7,14 +7,24 @@
   font-family: 'Poppins', sans-serif;
 }
 body{
+  background-color: black;
+  color: white;
+}
+.WeatherAppParent{
   width: 100vw;
   min-height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
+  backdrop-filter: blur(50px);
+
+  background-repeat: no-repeat;
+  background-position: top center;
+  background-size: cover;
+
 }
 
-.WeatherApp{
+.weatherapp_sections{
   display: flex;
   align-items: center;
   width: 80vw;

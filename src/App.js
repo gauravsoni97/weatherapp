@@ -4,13 +4,19 @@ import RightSide from "./Components/RightSideUi/RightSide";
 import weatherBackground from "./Images/strom.jpg";
 
 const App = () => {
-
   return (
     <div
-      className="WeatherApp"
+      className="WeatherAppParent"
+      style={{
+        backgroundImage: `   linear-gradient(45deg,
+        rgba(0,0,0, 0.5),
+        rgba(0,0,0, 0.5)),url(${weatherBackground})`,
+      }}
     >
-      <LeftSide currentWeatherImg={weatherBackground} />
-      <RightSide />
+      <div className="weatherapp_sections">
+        <LeftSide currentWeatherImg={weatherBackground} />
+        <RightSide />
+      </div>
     </div>
   );
 };
