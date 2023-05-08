@@ -1,15 +1,18 @@
-import React from 'react'
-import WeatherFilter from './WeatherFilter'
-import WeatherDetails from './WeatherDetails'
-import "./rightside.css"
+import React from "react";
+import "./rightside.css";
+import SearchRoundedIcon from "@mui/icons-material/SearchRounded";
 
 const RightSide = () => {
   return (
-    <div className='rightSide'>
-        <WeatherFilter/>
-        <WeatherDetails/>
+    <div className="rightSide">
+      <div className="SearchSection">
+        <input className="searchBar" type="search" required autoComplete="off" />
+        <button className="searchButton">
+          <SearchRoundedIcon />
+        </button>
+      </div>
     </div>
-  )
-}
+  );
+};
 
-export default RightSide
+export default RightSide;
