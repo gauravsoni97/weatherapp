@@ -11,6 +11,21 @@ const RightSide = () => {
           <SearchRoundedIcon />
         </button>
       </div>
+      <div className="weatherDetailsSection">
+        <p>Weather Details</p>
+
+        <div className="WeatherDetails">
+          <div className="details_list">
+          <span>Cloudy</span>
+          <span>86%</span>
+          </div>
+          <div className="details_list">
+          <span>Humidity</span>
+          <span>86%</span>
+          </div>
+        </div>
+
+      </div>
     </div>
   );
 };

@@ -4,5 +4,42 @@
   background-position: center center;
   background-size: cover;
   background-repeat: no-repeat;
-  padding: 1rem;
+  padding: 2rem;
+  position: relative;
+}
+
+
+.currentWeather{
+  position: absolute;
+  bottom: 2rem;
+  display: flex;
+  align-items: center;
+}
+
+.currentTemp{
+  font-size: 5rem;
+  text-shadow: 0 0 10px rgba(0, 0, 0, 0.301);
+}
+.currentLocation{
+  margin: 0 1rem;
+  font-size: 2rem;
+}
+
+.currentDateAndTime{
+  position: absolute;
+  top: 2rem;
+  right: 2rem;
+  font-size: 1rem;
+  text-shadow: 0 0 10px rgba(0, 0, 0, 0.301);
+
+}
+
+
+@media screen and (max-width:600px) {
+  .weatherBackground {
+    width: 100vw;
+    padding: 1rem;
+  }
+  
+  
 }
