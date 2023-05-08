@@ -25,21 +25,42 @@
   font-size: 2rem;
 }
 
-.currentDateAndTime{
-  position: absolute;
-  top: 2rem;
-  right: 2rem;
-  font-size: 1rem;
-  text-shadow: 0 0 10px rgba(0, 0, 0, 0.301);
 
-}
 
 
 @media screen and (max-width:600px) {
   .weatherBackground {
     width: 100vw;
+    height: 60%;
     padding: 1rem;
   }
+
+  .currentTemp{
+    font-size: 3rem;
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0.301);
+  }
+  .currentLocation{
+    margin:  0rem;
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+  }
+
+  .currentWeather{
+    position: absolute;
+    bottom: 3rem;
+    left: 2rem;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    flex-direction: column;
+  }
+  
+
+  .currentDateAndTime{
+    margin-top: 1rem;
+    margin-left: 1rem;
+  }
+  
   
   
 }

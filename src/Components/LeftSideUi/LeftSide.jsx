@@ -1,30 +1,35 @@
-import React from "react";
+import React, { useState } from "react";
 import "./LeftSide.css";
 import moment from "moment/moment";
 
+const LeftSide = ({ weatherBackground }) => {
+  const currentDate = moment().format("ll");
 
-const LeftSide = ({weatherBackground}) => {
+  const [currentTime, setCurrentTime] = useState(moment().format("LTS"));
 
-  const currentDate = moment().format('MMMM Do YYYY, h:mm:ss a');
+  setInterval(() => {
+    setCurrentTime(moment().format("LTS"));
+  }, 1000);
 
   return (
-    <div className="weatherBackground" style={{ backgroundImage: ` linear-gradient(45deg,
+    <div
+      className="weatherBackground"
+      style={{
+        backgroundImage: ` linear-gradient(45deg,
       rgba(0,0,0, 0.3),
-      rgba(0,0,0, 0.3)),URL(${weatherBackground})` }}>
+      rgba(0,0,0, 0.3)),URL(${weatherBackground})`,
+      }}
+    >
       {/* show city temprature time date and weather type */}
-      <p className="projectTitle">
-        Weather App
-      </p>
+
       <p className="currentDateAndTime">
-        {currentDate}
+        {currentDate} &nbsp; // &nbsp; {currentTime}
       </p>
+
       <div className="currentWeather">
-
-      <h1 className="currentTemp">60 C</h1>
-      <h2 className="currentLocation">Location</h2>
-      <span>Weather icons with name</span>
-
-
+        <h1 className="currentTemp">60 C</h1>
+        <h2 className="currentLocation">Location</h2>
+        <span>Weather icons with name</span>
       </div>
     </div>
   );
