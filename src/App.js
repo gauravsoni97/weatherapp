@@ -9,20 +9,7 @@ const App = () => {
 
   // current location
 
-  // https://ipapi.co/json
 
-  const currentLocation = async () => {
-    const response = await fetch("https://ipapi.co/json");
-    const result = await response.json();
-    console.log(result.city);
-    setCurrentCity(result);
-  };
-
-  console.log("This is current city", currentCity);
-
-  useEffect(() => {
-    currentLocation();
-  }, []);
 
   return (
     <div
@@ -36,7 +23,6 @@ const App = () => {
       <div className="blurLayer"></div>
       <div className="weatherapp_sections">
         <LeftSide
-          currentCity={currentCity}
           weatherBackground={weatherBackground}
         />
         <RightSide setSearchValue={setSearchValue} searchValue={searchValue} />
