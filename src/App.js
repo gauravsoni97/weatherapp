@@ -5,15 +5,24 @@ import weatherBackground from "./Images/rain.jpg";
 
 const App = () => {
   const [searchValue, setSearchValue] = useState("");
-  const [weather, SetWeather] = useState("");
+  const [currentCity, setCurrentCity] = useState("");
 
+  // current location
+
+  // https://ipapi.co/json
+
+  const currentLocation = async () => {
+    const response = await fetch("https://ipapi.co/json");
+    const result = await response.json();
+    console.log(result.city);
+    setCurrentCity(result);
+  };
+
+  console.log("This is current city", currentCity);
 
   useEffect(() => {
- 
+    currentLocation();
   }, []);
-
-  useEffect(() => {
-  }, [searchValue]);
 
   return (
     <div
@@ -26,8 +35,11 @@ const App = () => {
     >
       <div className="blurLayer"></div>
       <div className="weatherapp_sections">
-        <LeftSide weather={weather} weatherBackground={weatherBackground} />
-        <RightSide SetWeather={SetWeather} setSearchValue={setSearchValue} searchValue={searchValue} />
+        <LeftSide
+          currentCity={currentCity}
+          weatherBackground={weatherBackground}
+        />
+        <RightSide setSearchValue={setSearchValue} searchValue={searchValue} />
       </div>
     </div>
   );

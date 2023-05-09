@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import "./LeftSide.css";
 import moment from "moment/moment";
 
-const LeftSide = ({ weatherBackground }) => {
+const LeftSide = ({ weatherBackground, currentCity}) => {
   const currentDate = moment().format("ll");
 
   const [currentTime, setCurrentTime] = useState(moment().format("LTS"));
@@ -28,7 +28,7 @@ const LeftSide = ({ weatherBackground }) => {
 
       <div className="currentWeather">
         <h1 className="currentTemp">60 C</h1>
-        <h2 className="currentLocation">Weather</h2>
+        <h2 className="currentLocation">{currentCity.city}</h2>
         <span>Weather icons with name</span>
       </div>
     </div>
