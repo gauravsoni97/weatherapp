@@ -1,0 +1,6 @@
+<!-- Feature to be implemented in this project should be 
+
+1. Debouncing
+2. Search State / country
+3. use my current location and get weather report - according to my ip address / geo location
+4. background image change according ot weather -->
