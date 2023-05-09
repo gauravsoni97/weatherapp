@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import "./LeftSide.css";
 import moment from "moment/moment";
 
-const LeftSide = ({ weatherBackground, }) => {
+const LeftSide = ({ weatherBackground }) => {
   const currentDate = moment().format("ll");
 
   const [currentTime, setCurrentTime] = useState(moment().format("LTS"));
