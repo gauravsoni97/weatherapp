@@ -4,7 +4,21 @@ import RightSide from "./Components/RightSideUi/RightSide";
 import weatherBackground from "./Images/rain.jpg";
 
 const App = () => {
- 
+
+  const [cityWeather, setCityWeather] = useState("Hanumangarh")
+
+  const weatherApi = async () => {
+    const response = await fetch(
+      `https://api.openweathermap.org/data/2.5/weather?q=${cityWeather}&appid=983980943e4afc86d97243b4f1873779
+      `
+    );
+    const result = await response.json();
+    console.log(result);
+  };
+  useEffect(() => {
+  weatherApi();
+  }, [])
+  
 
   return (
     <div
@@ -17,7 +31,7 @@ const App = () => {
     >
       <div className="blurLayer"></div>
       <div className="weatherapp_sections">
-        <LeftSide  weatherBackground={weatherBackground} />
+        <LeftSide weatherBackground={weatherBackground} />
         <RightSide />
       </div>
     </div>

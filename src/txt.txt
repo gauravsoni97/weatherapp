@@ -1,5 +1,7 @@
 
-api for search weather =  https://api.openweathermap.org/data/2.5/weather?q=${searchValue}&units=metric&appid=983980943e4afc86d97243b4f1873779
+New Api key :- 
+
+https://api.openweathermap.org/data/2.5/weather?q={city name}&appid=92218c2573f89c85e3d99b1d2d125fb4
 
 
 <!-- Feature to be implemented in this project should be 
