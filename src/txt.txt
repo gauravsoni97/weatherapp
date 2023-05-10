@@ -1,5 +1,5 @@
 
-api for search weather =   // https://api.openweathermap.org/data/2.5/weather?q=${searchValue}&units=metric&appid=983980943e4afc86d97243b4f1873779
+api for search weather =  https://api.openweathermap.org/data/2.5/weather?q=${searchValue}&units=metric&appid=983980943e4afc86d97243b4f1873779
 
 
 <!-- Feature to be implemented in this project should be 

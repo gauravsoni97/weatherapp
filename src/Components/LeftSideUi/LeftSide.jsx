@@ -2,7 +2,19 @@ import React, { useState } from "react";
 import "./LeftSide.css";
 import moment from "moment/moment";
 
-const LeftSide = ({ weatherBackground }) => {
+const LeftSide = ({ data, weatherBackground }) => {
+
+//  ----------- obj destructuring of data we getting form api data ---------
+const { temp, humidity, pressure } = data.main;
+const { main: weathermood } = data.weather[0];
+const { name } = data;
+const { speed } = data.wind;
+const { country } = data.sys;
+
+
+
+
+
   const currentDate = moment().format("ll");
 
   const [currentTime, setCurrentTime] = useState(moment().format("LTS"));
@@ -27,9 +39,9 @@ const LeftSide = ({ weatherBackground }) => {
       </p>
 
       <div className="currentWeather">
-        <h1 className="currentTemp">60 C</h1>
-        <h2 className="currentLocation"></h2>
-        <span>Weather icons with name</span>
+        <h1 className="currentTemp">{temp}°C</h1>
+        <h2 className="currentLocation">{name} , {country}</h2>
+        <p>{weathermood}</p>
       </div>
     </div>
   );
