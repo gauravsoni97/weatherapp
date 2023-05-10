@@ -2,14 +2,7 @@ import React, { useState } from "react";
 import "./LeftSide.css";
 import moment from "moment/moment";
 
-const LeftSide = ({ data, weatherBackground }) => {
-
-//  ----------- obj destructuring of data we getting form api data ---------
-const { temp, humidity, pressure } = data.main;
-const { main: weathermood } = data.weather[0];
-const { name } = data;
-const { speed } = data.wind;
-const { country } = data.sys;
+const LeftSide = ({weatherBackground }) => {
 
 
 
@@ -39,9 +32,9 @@ const { country } = data.sys;
       </p>
 
       <div className="currentWeather">
-        <h1 className="currentTemp">{temp}°C</h1>
-        <h2 className="currentLocation">{name} , {country}</h2>
-        <p>{weathermood}</p>
+        <h1 className="currentTemp">23.23 °C</h1>
+        <h2 className="currentLocation">City, Country</h2>
+        <p>Clear</p>
       </div>
     </div>
   );
