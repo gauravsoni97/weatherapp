@@ -1,19 +1,29 @@
-import React from "react";
+import React, { useState } from "react";
 import "./rightside.css";
 import SearchRoundedIcon from "@mui/icons-material/SearchRounded";
 
-const RightSide = ({}) => {
+const RightSide = ({ setCityWeather }) => {
+  const [inputValue, setInputValue] = useState("");
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    setCityWeather(inputValue);
+    setInputValue("");
+  };
+
   return (
     <div className="rightSide">
-      <form>
+      <form onSubmit={handleSubmit}>
         <div className="SearchSection">
           <input
+            value={inputValue}
+            onChange={(e) => setInputValue(e.target.value)}
             className="searchBar"
             type="search"
             required
             autoComplete="off"
           />
-          <button className="searchButton">
+          <button type="submit" className="searchButton">
             <SearchRoundedIcon />
           </button>
         </div>

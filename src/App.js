@@ -6,6 +6,7 @@ import weatherBackground from "./Images/rain.jpg";
 const App = () => {
 
   const [cityWeather, setCityWeather] = useState("Hanumangarh")
+  const [data,setData]= useState([])
 
   const weatherApi = async () => {
     const response = await fetch(
@@ -14,10 +15,11 @@ const App = () => {
     );
     const result = await response.json();
     console.log(result);
+    setData(result)
   };
   useEffect(() => {
   weatherApi();
-  }, [])
+  }, [cityWeather])
   
 
   return (
@@ -31,8 +33,8 @@ const App = () => {
     >
       <div className="blurLayer"></div>
       <div className="weatherapp_sections">
-        <LeftSide weatherBackground={weatherBackground} />
-        <RightSide />
+        <LeftSide data={data} weatherBackground={weatherBackground} />
+        <RightSide setCityWeather={setCityWeather} />
       </div>
     </div>
   );
