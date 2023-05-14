@@ -42,7 +42,27 @@
 
 
 .weatherDetailsSection{
-  padding: 2rem;
+  padding: 2rem 2.5rem;
+}
+.weatherDetailsTxt{
+  margin: 1.3rem 0;
+  font-size: 1.2rem;
+}
+.weatherDetailsTxt::after{
+  content: "";
+  display: block;
+  width: 15%;
+  height: 0px;
+  margin-top: .5rem;
+  border: 1px solid coral;
+}
+
+
+.WeatherDetails{
+  max-height: 60vh;
+  overflow: auto;
+  overflow-x: hidden;
+  padding-right: 1rem;
 }
 
 .details_list {
@@ -50,9 +70,10 @@
   align-items: center;
   justify-content: space-between;
 }
+
 .details_list span{
-  font-size: .8rem;
-  margin: .5rem 0 ;
+  font-size: .9rem;
+  margin: .8rem 0 ;
 }
 
 
@@ -61,6 +82,13 @@
     width: 100vw;
   }
   
+  
+.WeatherDetails{
+  max-height: 40vh;
+  overflow: auto;
+  overflow-x: hidden;
+  padding-right: 1rem;
+}
   
   
 }

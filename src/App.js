@@ -14,7 +14,7 @@ const App = () => {
       `
     );
     const result = await response.json();
-    console.log(result);
+    console.log("this is result ", result);
     setData(result)
   };
   useEffect(() => {

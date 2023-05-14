@@ -33,7 +33,7 @@ const LeftSide = ({weatherBackground, data}) => {
 
       <div className="currentWeather">
         <h1 className="currentTemp">23.23 °C</h1>
-        <h2 className="currentLocation">{data.name}, Country</h2>
+        <h2 className="currentLocation">{data.name},</h2>
         <p>Clear</p>
       </div>
     </div>
