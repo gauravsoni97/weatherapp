@@ -1,8 +1,8 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./rightside.css";
 import SearchRoundedIcon from "@mui/icons-material/SearchRounded";
 
-const RightSide = ({ setCityWeather }) => {
+const RightSide = ({ setCityWeather, weatherApi }) => {
   const [inputValue, setInputValue] = useState("");
 
   const handleSubmit = (e) => {
@@ -29,7 +29,7 @@ const RightSide = ({ setCityWeather }) => {
         </div>
       </form>
       <div className="weatherDetailsSection">
-        <p className="weatherDetailsTxt" >Weather Details</p>
+        <p className="weatherDetailsTxt">Weather Details</p>
 
         <div className="WeatherDetails">
           <div className="details_list">

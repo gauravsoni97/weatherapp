@@ -10,7 +10,7 @@ const App = () => {
 
   const weatherApi = async () => {
     const response = await fetch(
-      `https://api.openweathermap.org/data/2.5/weather?q=${cityWeather}&appid=983980943e4afc86d97243b4f1873779
+      `https://api.openweathermap.org/data/2.5/weather?q=${cityWeather}&appid=92218c2573f89c85e3d99b1d2d125fb4
       `
     );
     const result = await response.json();
@@ -34,7 +34,7 @@ const App = () => {
       <div className="blurLayer"></div>
       <div className="weatherapp_sections">
         <LeftSide data={data} weatherBackground={weatherBackground} />
-        <RightSide setCityWeather={setCityWeather} />
+        <RightSide data={data} setCityWeather={setCityWeather} weatherApi={weatherApi} />
       </div>
     </div>
   );
