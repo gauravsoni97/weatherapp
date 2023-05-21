@@ -4,7 +4,7 @@ import RightSide from "./Components/RightSideUi/RightSide";
 import weatherBackground from "./Images/rain.jpg";
 
 const App = () => {
-  const [cityWeather, setCityWeather] = useState("Sirsa");
+  const [cityWeather, setCityWeather] = useState("");
   const [data, setData] = useState({
     temp: 0,
     humidity: 0,
@@ -35,10 +35,21 @@ const App = () => {
     });
   };
 
+
+  
   useEffect(() => {
     weatherApi();
     console.log("Api Result", data);
+    setCityWeather("Sirsa")
   }, []);
+
+
+  useEffect(() => {
+    weatherApi();
+    console.log("Weather Change use Effect", data);
+  }, [cityWeather]);
+
+
 
   return (
     <div

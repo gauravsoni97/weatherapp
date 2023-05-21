@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import "./rightside.css";
 import SearchRoundedIcon from "@mui/icons-material/SearchRounded";
 
-const RightSide = ({ setCityWeather, weatherApi }) => {
+const RightSide = ({ setCityWeather, data }) => {
   const [inputValue, setInputValue] = useState("");
 
   const handleSubmit = (e) => {
