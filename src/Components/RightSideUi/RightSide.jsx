@@ -30,36 +30,38 @@ const RightSide = ({ setCityWeather, data }) => {
       </form>
       <div className="weatherDetailsSection">
         <p className="weatherDetailsTxt">Weather Details</p>
-
         <div className="WeatherDetails">
           <div className="details_list">
             <span>Temprature</span>
-            <span>86%</span>
+            <span>{data.temp}</span>
           </div>
           <div className="details_list">
             <span>Pressure</span>
-            <span>86%</span>
+            <span>{data.pressure} mb</span>
+          </div>
+          <div className="details_list">
+            <span>Weather</span>
+            <span>{data.weather}</span>
           </div>
           <div className="details_list">
             <span>Humidity</span>
-            <span>86%</span>
-          </div>
-          <div className="details_list">
-            <span>Sea Level</span>
-            <span>86%</span>
-          </div>
-          <div className="details_list">
-            <span>Sun Rise</span>
-            <span>86%</span>
-          </div>
-          <div className="details_list">
-            <span>Sun Set</span>
-            <span>86%</span>
+            <span>{data.humidity} g.m<sup>-3</sup></span>
           </div>
           <div className="details_list">
             <span>Wind Speed</span>
-            <span>86%</span>
+            <span>{data.windSpeed}Kmph</span>
           </div>
+          <div className="details_list">
+            <span>Longitude</span>
+            <span>{data.lon}</span>
+          </div>
+     
+          <div className="details_list">
+            <span>Latitude</span>
+            <span>{data.lat}</span>
+          </div>
+     
+        
         </div>
       </div>
     </div>

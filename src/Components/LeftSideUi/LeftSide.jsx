@@ -30,6 +30,7 @@ const LeftSide = ({ weatherBackground, data }) => {
         <h2 className="currentLocation">
           {data.city}, {data.state}, {data.country}
         </h2>
+        <h3>{data.weather}</h3>
       </div>
     </div>
   );

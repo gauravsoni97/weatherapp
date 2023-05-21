@@ -7,10 +7,13 @@ const App = () => {
   const [cityWeather, setCityWeather] = useState("");
   const [data, setData] = useState({
     temp: 0,
+    pressure: 0,
     humidity: 0,
     weather: "",
     icon: "",
     windSpeed: 0,
+    lon: 0,
+    lat: 0,
     city: "",
     state: "",
     country: "",
@@ -25,10 +28,13 @@ const App = () => {
     console.log("api result", result);
     setData({
       temp: result.current.temperature,
+      pressure: result.current.pressure,
       humidity: result.current.humidity,
-      weather: result.weather_descriptions,
+      weather: result.current.weather_descriptions,
       icon: result.weather_icons,
-      windSpeed: result.wind_speed,
+      windSpeed: result.current.wind_speed,
+      lon: result.location.lon,
+      lat: result.location.lat,
       city: result.location.name,
       state: result.location.region,
       country: result.location.country,
