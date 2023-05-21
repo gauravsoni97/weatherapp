@@ -33,7 +33,7 @@ const RightSide = ({ setCityWeather, data }) => {
         <div className="WeatherDetails">
           <div className="details_list">
             <span>Temprature</span>
-            <span>{data.temp}</span>
+            <span>{data.temp} °C</span>
           </div>
           <div className="details_list">
             <span>Pressure</span>
