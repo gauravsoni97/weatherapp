@@ -4,7 +4,6 @@ import moment from "moment/moment";
 
 const LeftSide = ({ weatherBackground, data }) => {
   const currentDate = moment().format("ll");
-
   const [currentTime, setCurrentTime] = useState(moment().format("LTS"));
 
   setInterval(() => {
@@ -27,9 +26,10 @@ const LeftSide = ({ weatherBackground, data }) => {
       </p>
 
       <div className="currentWeather">
-        {/* <h1 className="currentTemp">{Math.round(data.main.temp - 273.15)}°C</h1> */}
-        {/* <h2 className="currentLocation">{data.name}, {data.sys.country}</h2> */}
-        {/* <p>{data.weather[0].main}</p> */}
+        <h1 className="currentTemp"> {data.temp} °C</h1>
+        <h2 className="currentLocation">
+          {data.city}, {data.state}, {data.country}
+        </h2>
       </div>
     </div>
   );

@@ -4,27 +4,47 @@ import RightSide from "./Components/RightSideUi/RightSide";
 import weatherBackground from "./Images/rain.jpg";
 
 const App = () => {
-  const [cityWeather, setCityWeather] = useState("Hanumangarh");
-  const [data, setData] = useState([]);
+  const [cityWeather, setCityWeather] = useState("Sirsa");
+  const [data, setData] = useState({
+    temp: 0,
+    humidity: 0,
+    weather: "",
+    icon: "",
+    windSpeed: 0,
+    city: "",
+    state: "",
+    country: "",
+  });
 
   const weatherApi = async () => {
     const response = await fetch(
-      `https://api.openweathermap.org/data/2.5/weather?q=${cityWeather}&appid=92218c2573f89c85e3d99b1d2d125fb4
-      `
+      `http://api.weatherstack.com/current?access_key=702dbdf22774e470cac8d592973f8a2f&query=${cityWeather}`
     );
     const result = await response.json();
-    console.log("this is result ", result);
-    setData(result);
+
+    console.log("api result", result);
+    setData({
+      temp: result.current.temperature,
+      humidity: result.current.humidity,
+      weather: result.weather_descriptions,
+      icon: result.weather_icons,
+      windSpeed: result.wind_speed,
+      city: result.location.name,
+      state: result.location.region,
+      country: result.location.country,
+    });
   };
+
   useEffect(() => {
     weatherApi();
-  }, [cityWeather]);
+    console.log("Api Result", data);
+  }, []);
 
   return (
     <div
       className="WeatherAppParent"
       style={{
-        backgroundImage: `   linear-gradient(45deg,
+        backgroundImage: `linear-gradient(45deg,
         rgba(0,0,0, 0.5),
         rgba(0,0,0, 0.5)),url(${weatherBackground})`,
       }}
