@@ -26,11 +26,11 @@ const LeftSide = ({ weatherBackground, data }) => {
       </p>
 
       <div className="currentWeather">
-        <h1 className="currentTemp"> {data.temp} °C</h1>
+        <h1 className="currentTemp"> {Math.round(data.temp)} °C</h1>
         <h2 className="currentLocation">
-          {data.city}, {data.state}, {data.country}
+          {data.cityName}, {data.countryName}, {}
         </h2>
-        <h3>{data.weather}</h3>
+        <h3>{}</h3>
       </div>
     </div>
   );
