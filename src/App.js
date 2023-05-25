@@ -23,10 +23,9 @@ const App = () => {
 
   useEffect(() => {
     const weatherApi = async () => {
-     const apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${cityWeather}&units=metric&appid=5dc4d0db9fc5256a0ace471a19e48871
-     `
-      const response =
-        await fetch(apiUrl);
+      const apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${cityWeather}&units=metric&appid=5dc4d0db9fc5256a0ace471a19e48871
+     `;
+      const response = await fetch(apiUrl);
       const result = await response.json();
 
       console.log("Weather Api Response", result);
