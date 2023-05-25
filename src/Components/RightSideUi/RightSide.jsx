@@ -1,8 +1,28 @@
 import React, { useEffect, useState } from "react";
 import "./rightside.css";
 import SearchRoundedIcon from "@mui/icons-material/SearchRounded";
+import moment from "moment/moment";
 
 const RightSide = ({ setCityWeather, data }) => {
+  const {
+    temp,
+    cityName,
+    countryName,
+    weatherType,
+    pressure,
+    lon,
+    lat,
+    windSpeed,
+    windDeg,
+    feelsLike,
+    minTemp,
+    maxTemp,
+    seaLevel,
+    groundLevel,
+    sunrise,
+    sunset,
+  } = data;
+
   const [inputValue, setInputValue] = useState("");
 
   const handleSubmit = (e) => {
@@ -32,36 +52,74 @@ const RightSide = ({ setCityWeather, data }) => {
         <p className="weatherDetailsTxt">Weather Details</p>
         <div className="WeatherDetails">
           <div className="details_list">
-            <span>Temprature</span>
-            <span>{data.temp} °C</span>
+            <span>City Name</span>
+            <span>{cityName}</span>
           </div>
           <div className="details_list">
+            <span>Country</span>
+            <span>{countryName}</span>
+          </div>
+          <div className="details_list">
+            <span>Temprature</span>
+            <span>{temp} °C</span>
+          </div>
+
+          <div className="details_list">
+            <span>Minmum Temprature</span>
+            <span>{minTemp} °C</span>
+          </div>
+          <div className="details_list">
+            <span>Maximum Temprature</span>
+            <span>{maxTemp} °C</span>
+          </div>
+          
+          <div className="details_list">
             <span>Pressure</span>
-            <span>{data.pressure} mb</span>
+            <span>{pressure} mb</span>
           </div>
           <div className="details_list">
             <span>Weather</span>
-            <span>{data.weather}</span>
+            <span>{weatherType}</span>
           </div>
-          <div className="details_list">
-            <span>Humidity</span>
-            <span>{data.humidity} g.m<sup>-3</sup></span>
-          </div>
+
           <div className="details_list">
             <span>Wind Speed</span>
-            <span>{data.windSpeed}Kmph</span>
+            <span>{windSpeed}Kmph</span>
+          </div>
+          <div className="details_list">
+            <span>Wind Degree</span>
+            <span>{windDeg}</span>
           </div>
           <div className="details_list">
             <span>Longitude</span>
-            <span>{data.lon}</span>
+            <span>{lon}</span>
           </div>
-     
+
           <div className="details_list">
             <span>Latitude</span>
-            <span>{data.lat}</span>
+            <span>{lat}</span>
           </div>
-     
-        
+          <div className="details_list">
+            <span>Feels Like</span>
+            <span>{feelsLike}</span>
+          </div>
+       
+          <div className="details_list">
+            <span>Sea Level</span>
+            <span>{seaLevel} m</span>
+          </div>
+          <div className="details_list">
+            <span>Ground Level</span>
+            <span>{groundLevel} m</span>
+          </div>
+          <div className="details_list">
+            <span>Sun Rise</span>
+            <span>{moment.unix(sunrise).format('h:mm A')}</span>
+          </div>
+          <div className="details_list">
+            <span>Sun Set</span>
+            <span>{moment.unix(sunset).format('h:mm A')}</span>
+          </div>
         </div>
       </div>
     </div>
