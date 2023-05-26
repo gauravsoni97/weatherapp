@@ -82,6 +82,7 @@ const RightSide = ({ setCityWeather, data, loader }) => {
             value={inputValue}
             onChange={(e) => setInputValue(e.target.value)}
             className="searchBar"
+            placeholder="Search City"
             type="search"
             required
             autoComplete="off"

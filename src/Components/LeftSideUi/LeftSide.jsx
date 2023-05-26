@@ -23,7 +23,7 @@ const LeftSide = ({ weatherBackground, data, loader }) => {
       {/* show city temprature time date and weather type */}
 
       <p className="currentDateAndTime">
-        {currentDate} &nbsp; // &nbsp; {currentTime}
+        {currentDate} &nbsp; || &nbsp; {currentTime}
       </p>
 
       <div className="currentWeather">

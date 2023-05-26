@@ -19,13 +19,13 @@
 }
 .searchBar {
   width: 100%;
-  padding: 1rem;
+  padding: 1.2rem 0;
   background: transparent;
   outline: none;
   border: none;
   border-bottom: 1px solid #808080ab;
   color: #ffffff;
-  font-size: 1.3rem;
+  font-size: 1rem;
 }
 
 .searchButton {
