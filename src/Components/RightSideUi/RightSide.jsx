@@ -102,15 +102,16 @@ const RightSide = ({ setCityWeather, data, loader }) => {
                 <div className="details_list" key={id}>
                   <span>{text}</span>
                   {loader ? (
-                  <Triangle
-                  height="10"
-                  width="10"
-                  color="white"
-                  ariaLabel="triangle-loading"
-                  wrapperStyle={{}}
-                  wrapperClassName=""
-                  visible={true}
-                />
+                 <Puff
+                 height="10"
+                 width="10"
+                 radius={1}
+                 color="gray"
+                 ariaLabel="puff-loading"
+                 wrapperStyle={{}}
+                 wrapperClass=""
+                 visible={true}
+               />
                   ) : (
                     <span>{value}</span>
                   )}
