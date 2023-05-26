@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import LeftSide from "./Components/LeftSideUi/LeftSide";
 import RightSide from "./Components/RightSideUi/RightSide";
 import weatherBackground from "./Images/rain.jpg";
+import { CirclesWithBar } from "react-loader-spinner";
 
 const App = () => {
   const [loader, setLoader] = useState(true);
@@ -65,7 +66,7 @@ const App = () => {
       setLoader(false);
       console.log("data from state", data);
     };
-    setLoader(true)
+    setLoader(true);
     setTimeout(() => {
       weatherApi();
     }, 500);
@@ -83,10 +84,13 @@ const App = () => {
             setError(error.message);
           }
         );
+        setLoader(false);
       } else {
         setError("Geolocation is not supported by your browser.");
       }
     };
+
+    setLoader(false);
 
     getLocation();
   }, []);
@@ -130,19 +134,38 @@ const App = () => {
         rgba(0,0,0, 0.5)),url(${weatherBackground})`,
       }}
     >
-      <div className="blurLayer"></div>
-      <div className="weatherapp_sections">
-        <LeftSide
-          loader={loader}
-          data={data}
-          weatherBackground={weatherBackground}
-        />
-        <RightSide
-          loader={loader}
-          data={data}
-          setCityWeather={setCityWeather}
-        />
-      </div>
+      {loader ? (
+        <>
+          <CirclesWithBar
+            height="100"
+            width="100"
+            color="white"
+            wrapperStyle={{}}
+            wrapperClass=""
+            visible={true}
+            outerCircleColor=""
+            innerCircleColor=""
+            barColor=""
+            ariaLabel="circles-with-bar-loading"
+          />
+        </>
+      ) : (
+        <>
+          <div className="blurLayer"></div>
+          <div className="weatherapp_sections">
+            <LeftSide
+              loader={loader}
+              data={data}
+              weatherBackground={weatherBackground}
+            />
+            <RightSide
+              loader={loader}
+              data={data}
+              setCityWeather={setCityWeather}
+            />
+          </div>
+        </>
+      )}
     </div>
   );
 };
