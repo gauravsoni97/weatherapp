@@ -23,6 +23,48 @@ const RightSide = ({ setCityWeather, data }) => {
     sunset,
   } = data;
 
+  const dataToShow = [
+    { id: 1, text: "Temprature", value: `${temp} °C` },
+
+    { id: 2, text: "City", value: `${cityName}` },
+
+    { id: 3, text: "Country", value: `${countryName}` },
+
+    { id: 4, text: "Weather", value: `${weatherType}` },
+
+    { id: 5, text: "Pressure", value: `${pressure} mb` },
+
+    { id: 6, text: "Longitude", value: `${lon}` },
+
+    { id: 7, text: "Latitude", value: `${lat}` },
+
+    { id: 8, text: "Wind Speed", value: `${windSpeed} Kmph` },
+
+    { id: 9, text: "Wind Degree", value: `${windDeg} Deg` },
+
+    { id: 10, text: "Feels Like", value: `${feelsLike}  °C` },
+
+    { id: 11, text: "Min Temp", value: `${minTemp} °C` },
+
+    { id: 12, text: "Max Temp", value: `${maxTemp} °C` },
+
+    { id: 13, text: "Sea Level", value: `${seaLevel} m` },
+
+    { id: 14, text: "Ground Level", value: `${groundLevel} m` },
+
+    {
+      id: 15,
+      text: "Sun Rise",
+      value: `${moment.unix(sunrise).format("h:mm A")}`,
+    },
+
+    {
+      id: 16,
+      text: "Sun Set",
+      value: `${moment.unix(sunset).format("h:mm A")}`,
+    },
+  ];
+
   const [inputValue, setInputValue] = useState("");
 
   const handleSubmit = (e) => {
@@ -51,75 +93,17 @@ const RightSide = ({ setCityWeather, data }) => {
       <div className="weatherDetailsSection">
         <p className="weatherDetailsTxt">Weather Details</p>
         <div className="WeatherDetails">
-          <div className="details_list">
-            <span>City Name</span>
-            <span>{cityName}</span>
-          </div>
-          <div className="details_list">
-            <span>Country</span>
-            <span>{countryName}</span>
-          </div>
-          <div className="details_list">
-            <span>Temprature</span>
-            <span>{temp} °C</span>
-          </div>
-
-          <div className="details_list">
-            <span>Minmum Temprature</span>
-            <span>{minTemp} °C</span>
-          </div>
-          <div className="details_list">
-            <span>Maximum Temprature</span>
-            <span>{maxTemp} °C</span>
-          </div>
-          
-          <div className="details_list">
-            <span>Pressure</span>
-            <span>{pressure} mb</span>
-          </div>
-          <div className="details_list">
-            <span>Weather</span>
-            <span>{weatherType}</span>
-          </div>
-
-          <div className="details_list">
-            <span>Wind Speed</span>
-            <span>{windSpeed}Kmph</span>
-          </div>
-          <div className="details_list">
-            <span>Wind Degree</span>
-            <span>{windDeg}</span>
-          </div>
-          <div className="details_list">
-            <span>Longitude</span>
-            <span>{lon}</span>
-          </div>
-
-          <div className="details_list">
-            <span>Latitude</span>
-            <span>{lat}</span>
-          </div>
-          <div className="details_list">
-            <span>Feels Like</span>
-            <span>{feelsLike}</span>
-          </div>
-       
-          <div className="details_list">
-            <span>Sea Level</span>
-            <span>{seaLevel} m</span>
-          </div>
-          <div className="details_list">
-            <span>Ground Level</span>
-            <span>{groundLevel} m</span>
-          </div>
-          <div className="details_list">
-            <span>Sun Rise</span>
-            <span>{moment.unix(sunrise).format('h:mm A')}</span>
-          </div>
-          <div className="details_list">
-            <span>Sun Set</span>
-            <span>{moment.unix(sunset).format('h:mm A')}</span>
-          </div>
+          {dataToShow.map((ele) => {
+            const { id, text, value } = ele;
+            return (
+              <>
+                <div className="details_list" key={id}>
+                  <span>{text}</span>
+                  <span>{value}</span>
+                </div>
+              </>
+            );
+          })}
         </div>
       </div>
     </div>
