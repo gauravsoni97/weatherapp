@@ -1,11 +1,8 @@
 
-New Api key :- 
+Features:- 
 
-https://api.openweathermap.org/data/2.5/weather?q={city name}&appid=92218c2573f89c85e3d99b1d2d125fb4
-
-
-<!-- Feature to be implemented in this project should be 
-1. Debouncing
-2. Search State / country
-3. use my current location and get weather report - according to my ip address / geo location
-4. background image change according ot weather -->
+* debouncing with search suggestions 
+* animated weather icons 
+* weather background change according to weather type change 
+* non allow location - empty state loader
+* loading animation for data 
