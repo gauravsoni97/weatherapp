@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import "./rightside.css";
 import SearchRoundedIcon from "@mui/icons-material/SearchRounded";
 import moment from "moment/moment";
-import { MutatingDots, Puff, ThreeDots } from "react-loader-spinner";
+import { MutatingDots, Puff, ThreeDots, Triangle } from "react-loader-spinner";
 
 const RightSide = ({ setCityWeather, data, loader }) => {
   const {
@@ -102,16 +102,15 @@ const RightSide = ({ setCityWeather, data, loader }) => {
                 <div className="details_list" key={id}>
                   <span>{text}</span>
                   {loader ? (
-                    <ThreeDots
-                      height="30"
-                      width="30"
-                      radius="9"
-                      color="gray"
-                      ariaLabel="three-dots-loading"
-                      wrapperStyle={{}}
-                      wrapperClassName=""
-                      visible={true}
-                    />
+                  <Triangle
+                  height="10"
+                  width="10"
+                  color="white"
+                  ariaLabel="triangle-loading"
+                  wrapperStyle={{}}
+                  wrapperClassName=""
+                  visible={true}
+                />
                   ) : (
                     <span>{value}</span>
                   )}

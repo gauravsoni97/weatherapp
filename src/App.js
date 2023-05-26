@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import LeftSide from "./Components/LeftSideUi/LeftSide";
 import RightSide from "./Components/RightSideUi/RightSide";
 import weatherBackground from "./Images/rain.jpg";
-import { CirclesWithBar } from "react-loader-spinner";
+import { CirclesWithBar, Triangle } from "react-loader-spinner";
 
 const App = () => {
   const [loader, setLoader] = useState(true);
@@ -134,22 +134,20 @@ const App = () => {
         rgba(0,0,0, 0.5)),url(${weatherBackground})`,
       }}
     >
-      {loader ? (
+     {error && !latitude && !longitude ? (
         <>
-          <CirclesWithBar
-            height="100"
-            width="100"
+          <Triangle
+            height="80"
+            width="80"
             color="white"
+            ariaLabel="triangle-loading"
             wrapperStyle={{}}
-            wrapperClass=""
+            wrapperClassName=""
             visible={true}
-            outerCircleColor=""
-            innerCircleColor=""
-            barColor=""
-            ariaLabel="circles-with-bar-loading"
           />
+          Please allow your location for fetching Weather Details
         </>
-      ) : (
+      ) : ( 
         <>
           <div className="blurLayer"></div>
           <div className="weatherapp_sections">
@@ -165,7 +163,7 @@ const App = () => {
             />
           </div>
         </>
-      )}
+     )} 
     </div>
   );
 };

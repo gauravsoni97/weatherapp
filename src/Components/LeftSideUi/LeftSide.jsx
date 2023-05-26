@@ -1,7 +1,13 @@
 import React, { useState } from "react";
 import "./LeftSide.css";
 import moment from "moment/moment";
-import { BallTriangle, Circles, FallingLines } from "react-loader-spinner";
+import {
+  BallTriangle,
+  Circles,
+  FallingLines,
+  ThreeDots,
+  Triangle,
+} from "react-loader-spinner";
 
 const LeftSide = ({ weatherBackground, data, loader }) => {
   const currentDate = moment().format("ll");
@@ -28,12 +34,15 @@ const LeftSide = ({ weatherBackground, data, loader }) => {
 
       <div className="currentWeather">
         {loader ? (
-        <FallingLines
-        color="white"
-        width="100"
-        visible={true}
-        ariaLabel='falling-lines-loading'
-      />
+         <Triangle
+         height="70"
+         width="70"
+         color="white"
+         ariaLabel="triangle-loading"
+         wrapperStyle={{}}
+         wrapperClassName=""
+         visible={true}
+       />
         ) : (
           <>
             <h1 className="currentTemp"> {Math.round(data.temp)}°c</h1>
