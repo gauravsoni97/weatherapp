@@ -4,6 +4,8 @@ import RightSide from "./Components/RightSideUi/RightSide";
 import weatherBackground from "./Images/rain.jpg";
 
 const App = () => {
+  const [loader, setLoader] = useState(true);
+
   // ---------- Current location  ----------
 
   const [latitude, setLatitude] = useState(null);
@@ -60,10 +62,13 @@ const App = () => {
         sunset: result.sys.sunset,
       });
 
+      setLoader(false);
       console.log("data from state", data);
     };
-
-    weatherApi();
+    setLoader(true)
+    setTimeout(() => {
+      weatherApi();
+    }, 500);
   }, [cityWeather]);
 
   useEffect(() => {
@@ -127,8 +132,16 @@ const App = () => {
     >
       <div className="blurLayer"></div>
       <div className="weatherapp_sections">
-        <LeftSide data={data} weatherBackground={weatherBackground} />
-        <RightSide data={data} setCityWeather={setCityWeather} />
+        <LeftSide
+          loader={loader}
+          data={data}
+          weatherBackground={weatherBackground}
+        />
+        <RightSide
+          loader={loader}
+          data={data}
+          setCityWeather={setCityWeather}
+        />
       </div>
     </div>
   );

@@ -1,8 +1,9 @@
 import React, { useState } from "react";
 import "./LeftSide.css";
 import moment from "moment/moment";
+import { BallTriangle, Circles, FallingLines } from "react-loader-spinner";
 
-const LeftSide = ({ weatherBackground, data }) => {
+const LeftSide = ({ weatherBackground, data, loader }) => {
   const currentDate = moment().format("ll");
   const [currentTime, setCurrentTime] = useState(moment().format("LTS"));
 
@@ -26,11 +27,22 @@ const LeftSide = ({ weatherBackground, data }) => {
       </p>
 
       <div className="currentWeather">
-        <h1 className="currentTemp"> {Math.round(data.temp)}°c</h1>
-        <h2 className="currentLocation">
-          {data.cityName}, {data.countryName}, {}
-        </h2>
-        <h3>{}</h3>
+        {loader ? (
+        <FallingLines
+        color="white"
+        width="100"
+        visible={true}
+        ariaLabel='falling-lines-loading'
+      />
+        ) : (
+          <>
+            <h1 className="currentTemp"> {Math.round(data.temp)}°c</h1>
+            <h2 className="currentLocation">
+              {data.cityName}, {data.countryName}, {}
+            </h2>
+            <h3>{}</h3>
+          </>
+        )}
       </div>
     </div>
   );

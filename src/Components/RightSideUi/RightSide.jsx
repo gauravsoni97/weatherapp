@@ -2,8 +2,9 @@ import React, { useEffect, useState } from "react";
 import "./rightside.css";
 import SearchRoundedIcon from "@mui/icons-material/SearchRounded";
 import moment from "moment/moment";
+import { MutatingDots, Puff, ThreeDots } from "react-loader-spinner";
 
-const RightSide = ({ setCityWeather, data }) => {
+const RightSide = ({ setCityWeather, data, loader }) => {
   const {
     temp,
     cityName,
@@ -38,7 +39,7 @@ const RightSide = ({ setCityWeather, data }) => {
 
     { id: 7, text: "Latitude", value: `${lat}` },
 
-    { id: 8, text: "Wind Speed", value: `${windSpeed} Kmph` },
+    { id: 8, text: "Wind Speed", value: `${windSpeed} Km/h` },
 
     { id: 9, text: "Wind Degree", value: `${windDeg} Deg` },
 
@@ -99,7 +100,20 @@ const RightSide = ({ setCityWeather, data }) => {
               <>
                 <div className="details_list" key={id}>
                   <span>{text}</span>
-                  <span>{value}</span>
+                  {loader ? (
+                    <ThreeDots
+                      height="30"
+                      width="30"
+                      radius="9"
+                      color="gray"
+                      ariaLabel="three-dots-loading"
+                      wrapperStyle={{}}
+                      wrapperClassName=""
+                      visible={true}
+                    />
+                  ) : (
+                    <span>{value}</span>
+                  )}
                 </div>
               </>
             );
