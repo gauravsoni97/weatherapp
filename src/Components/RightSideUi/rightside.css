@@ -42,7 +42,7 @@
 
 
 .weatherDetailsSection{
-  padding: 2rem 2.5rem;
+  padding: 2rem 0  2rem 2.5rem;
 }
 .weatherDetailsTxt{
   margin: 1.3rem 0;
@@ -59,10 +59,10 @@
 
 
 .WeatherDetails{
-  max-height: 60vh;
+  max-height: 65vh;
   overflow: auto;
   overflow-x: hidden;
-  padding-right: 1rem;
+  padding-right: 2.5rem;
 }
 
 .details_list {
@@ -73,7 +73,8 @@
 
 .details_list span{
   font-size: .9rem;
-  margin: .8rem 0 ;
+  margin: 1rem 0 ;
+  opacity: .7;
 }
 
 
