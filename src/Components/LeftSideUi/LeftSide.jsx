@@ -9,6 +9,8 @@ import {
   Triangle,
 } from "react-loader-spinner";
 
+import FilterDramaRoundedIcon from '@mui/icons-material/FilterDramaRounded';
+
 const LeftSide = ({ weatherBackground, data, loader }) => {
   const currentDate = moment().format("ll");
   const [currentTime, setCurrentTime] = useState(moment().format("LTS"));
@@ -28,28 +30,38 @@ const LeftSide = ({ weatherBackground, data, loader }) => {
     >
       {/* show city temprature time date and weather type */}
 
-      <p className="currentDateAndTime">
-        {currentDate} &nbsp; || &nbsp; {currentTime}
-      </p>
-
+      <p>Weather App.</p>
       <div className="currentWeather">
         {loader ? (
-         <Triangle
-         height="70"
-         width="70"
-         color="white"
-         ariaLabel="triangle-loading"
-         wrapperStyle={{}}
-         wrapperClassName=""
-         visible={true}
-       />
+          <Triangle
+            height="70"
+            width="70"
+            color="white"
+            ariaLabel="triangle-loading"
+            wrapperStyle={{}}
+            wrapperClassName=""
+            visible={true}
+          />
         ) : (
           <>
-            <h1 className="currentTemp"> {Math.round(data.temp)}°c</h1>
-            <h2 className="currentLocation">
-              {data.cityName}, {data.countryName}, {}
-            </h2>
-            <h3>{}</h3>
+            <div className="ShowOutput">
+              <div>
+                <h1 className="currentTemp"> {Math.round(data.temp)}°c</h1>
+              </div>
+
+              <div className="CityDateTime">
+                <h2 className="currentLocation">{data.cityName}</h2>
+
+                <p className="currentDateAndTime">
+                  {currentDate} &nbsp;|&nbsp; {currentTime}
+                </p>
+              </div>
+
+              <div className="weatherType">
+                <span className="weatherIcon"><FilterDramaRoundedIcon/></span> <br />
+                <p>{data.weatherType}</p>
+              </div>
+            </div>
           </>
         )}
       </div>

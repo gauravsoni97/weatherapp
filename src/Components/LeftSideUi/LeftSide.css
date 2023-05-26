@@ -9,22 +9,37 @@
 }
 
 
+.ShowOutput{
+  display: flex;
+  align-items:center;
+  justify-content: center;
+}
+
+.CityDateTime{
+  margin: 1rem  2rem;
+}
+
 .currentWeather{
   position: absolute;
   bottom: 2rem;
-  display: flex;
-  align-items: center;
 }
 
 .currentTemp{
   font-size: 5rem;
-  text-shadow: 0 0 10px rgba(0, 0, 0, 0.301);
 }
 .currentLocation{
-  margin: 0 1rem;
   font-size: 2rem;
 }
+.currentDateAndTime{
+  font-size: 1.1rem;
+  margin-top: .3rem;
+}
 
+
+.weatherIcon{
+  font-size: 2rem;
+  
+}
 
 
 
@@ -56,10 +71,6 @@
   }
   
 
-  .currentDateAndTime{
-    margin-top: 1rem;
-    margin-left: 1rem;
-  }
   
   
   
