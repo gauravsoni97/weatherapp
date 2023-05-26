@@ -72,26 +72,29 @@ const App = () => {
     }, 500);
   }, [cityWeather]);
 
+
   useEffect(() => {
     const getLocation = () => {
       if (navigator.geolocation) {
-        navigator.geolocation.getCurrentPosition(
-          (position) => {
-            setLatitude(position.coords.latitude);
-            setLongitude(position.coords.longitude);
-          },
-          (error) => {
-            setError(error.message);
-          }
-        );
-        setLoader(false);
+        setLoader(true); // Show loader initially
+  
+        const successCallback = (position) => {
+          setLatitude(position.coords.latitude);
+          setLongitude(position.coords.longitude);
+          setLoader(false); // Remove loader on success
+        };
+  
+        const errorCallback = (error) => {
+          setError(error.message);
+          setLoader(true); // Show loader continuously on error
+        };
+  
+        navigator.geolocation.getCurrentPosition(successCallback, errorCallback);
       } else {
         setError("Geolocation is not supported by your browser.");
       }
     };
-
-    setLoader(false);
-
+  
     getLocation();
   }, []);
 
@@ -134,7 +137,7 @@ const App = () => {
         rgba(0,0,0, 0.5)),url(${weatherBackground})`,
       }}
     >
-     {error ? (
+     {error && loader ? (
         <>
           <Triangle
             height="80"
