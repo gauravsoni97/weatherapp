@@ -134,7 +134,7 @@ const App = () => {
         rgba(0,0,0, 0.5)),url(${weatherBackground})`,
       }}
     >
-     {error && !latitude && !longitude ? (
+     {error ? (
         <>
           <Triangle
             height="80"
