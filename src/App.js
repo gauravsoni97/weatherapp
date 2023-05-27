@@ -10,7 +10,7 @@ const App = () => {
   const [weatherImage, setWeatherImage] = useState({
     currentImg: "./Images/sunny.jpg", // Provide a default image path here
   });
-  
+
   console.log("img from json", weatherImage);
 
   const [loader, setLoader] = useState(true);
@@ -74,13 +74,15 @@ const App = () => {
         icon: result.weather[0].icon,
       });
 
-      const currentWeatherImage = WeatherImages.find((elem) => elem.weather === result.weather[0].main);
+      const currentWeatherImage = WeatherImages.find(
+        (elem) => elem.weather === result.weather[0].main
+      );
       if (currentWeatherImage) {
         setWeatherImage({ currentImg: currentWeatherImage.img });
       } else {
         setWeatherImage({ currentImg: "./Images/sunny.jpg" }); // Use a default image if no match is found
       }
-      
+
       setLoader(false);
     };
     setLoader(true);
@@ -145,9 +147,6 @@ const App = () => {
       getCityName();
     }
   }, [latitude, longitude]);
-
-
-
 
   return (
     <div
