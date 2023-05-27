@@ -7,9 +7,10 @@ import WeatherImages from "./Components/jsonData/weatherImgs";
 
 const App = () => {
   const weatherImgList = WeatherImages;
-
-  const [weatherImage, setWeatherImage] = useState("");
-
+  const [weatherImage, setWeatherImage] = useState({
+    currentImg: "./Images/sunny.jpg", // Provide a default image path here
+  });
+  
   console.log("img from json", weatherImage);
 
   const [loader, setLoader] = useState(true);
@@ -73,15 +74,16 @@ const App = () => {
         icon: result.weather[0].icon,
       });
 
+      const currentWeatherImage = WeatherImages.find((elem) => elem.weather === result.weather[0].main);
+      if (currentWeatherImage) {
+        setWeatherImage({ currentImg: currentWeatherImage.img });
+      } else {
+        setWeatherImage({ currentImg: "./Images/sunny.jpg" }); // Use a default image if no match is found
+      }
+      
       setLoader(false);
     };
     setLoader(true);
-
-    const currentWeatherImage = weatherImgList.filter((elem) => {
-      return elem.weather === data.weatherType;
-    });
-
-    setWeatherImage(currentWeatherImage[0].img);
 
     weatherApi();
   }, [cityWeather]);
@@ -144,13 +146,16 @@ const App = () => {
     }
   }, [latitude, longitude]);
 
+
+
+
   return (
     <div
       className="WeatherAppParent"
       style={{
         backgroundImage: `linear-gradient(45deg,
         rgba(0,0,0, 0.5),
-        rgba(0,0,0, 0.5)),url(${weatherImage})`,
+        rgba(0,0,0, 0.5)),url(${weatherImage.currentImg})`,
       }}
     >
       {error && loader ? (
@@ -173,7 +178,7 @@ const App = () => {
             <LeftSide
               loader={loader}
               data={data}
-              weatherBackground={weatherImage}
+              weatherBackground={weatherImage.currentImg}
             />
             <RightSide
               loader={loader}
