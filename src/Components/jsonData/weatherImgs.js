@@ -6,7 +6,7 @@ const WeatherImages = [
   },
   {
     id: 2,
-    img: "./Images/cloud.png",
+    img: "./Images/clouds.jpg",
     weather: "Clouds",
   },
   {
@@ -16,38 +16,43 @@ const WeatherImages = [
   },
   {
     id: 4,
-    img: "./Images/rain.jpg",
+    img: "./Images/snow.jpg",
     weather: "Snow",
   },
   {
     id: 5,
-    img: "./Images/rain.jpg",
+    img: "./Images/dust.jpg",
     weather: "Dust",
   },
   {
     id: 6,
-    img: "./Images/rain.jpg",
+    img: "./Images/drizzle.jpg",
     weather: "Drizzle",
   },
   {
     id: 7,
-    img: "./Images/rain.jpg",
+    img: "./Images/fog.jpg",
     weather: "Fog",
   },
   {
     id: 8,
-    img: "./Images/rain.jpg",
+    img: "./Images/smoke.jpg",
     weather: "Smoke",
   },
   {
     id: 9,
-    img: "./Images/rain.jpg",
+    img: "./Images/tornado.jpg",
     weather: "Tornado",
   },
   {
     id: 10,
-    img: "./Images/sunny.jpg",
+    img: "./Images/clear.jpg",
     weather: "Clear",
+  },
+  {
+    id: 11,
+    img: "./Images/storm.jpg",
+    weather: "Storm",
   },
 ];
 

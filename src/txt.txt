@@ -9,15 +9,7 @@ Features:-
 * loading animation for data 
 
 
-Haze
-Clouds
-Rain
-Snow
-Dust
-Drizzle
-Fog
-Smoke
-Tornado
+
 
 
 
