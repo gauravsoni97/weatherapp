@@ -97,11 +97,11 @@ const RightSide = ({ setCityWeather, data, loader }) => {
       <div className="weatherDetailsSection">
         <p className="weatherDetailsTxt">Weather Details</p>
         <div className="WeatherDetails">
-          {dataToShow.map((ele) => {
+          {dataToShow.map((ele , idx) => {
             const { id, text, value } = ele;
             return (
               <>
-                <div className="details_list" key={id}>
+                <div className="details_list" key={idx}>
                   <span>{text}</span>
                   {loader ? (
                  <Puff

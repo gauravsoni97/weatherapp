@@ -3,10 +3,21 @@ Features:-
 
 * debouncing with search suggestions 
 * animated weather icons 
+* animated text
 * weather background change according to weather type change 
 * non allow location - empty state loader
 * loading animation for data 
 
+
+Haze
+Clouds
+Rain
+Snow
+Dust
+Drizzle
+Fog
+Smoke
+Tornado
 
 
 

@@ -58,7 +58,7 @@ const LeftSide = ({ weatherBackground, data, loader }) => {
               </div>
 
               <div className="CityDateTime">
-                <h2 className="currentLocation">{data.cityName}</h2>
+                <h2 className="currentLocation">{data.cityName}, {data.countryName}</h2>
               </div>
 
               <div className="weatherType">

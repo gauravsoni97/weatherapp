@@ -3,10 +3,17 @@ import LeftSide from "./Components/LeftSideUi/LeftSide";
 import RightSide from "./Components/RightSideUi/RightSide";
 import weatherBackground from "./Images/rain.jpg";
 import { CirclesWithBar, Triangle } from "react-loader-spinner";
+import WeatherImages from "./Components/jsonData/weatherImgs";
+
 
 const App = () => {
-  const [loader, setLoader] = useState(true);
 
+  const[weatherImgs, setWeatherImgs] = useState(WeatherImages)
+
+  console.log("img from json",weatherImgs[0].img);
+
+  
+  const [loader, setLoader] = useState(true);
   // ---------- Current location  ----------
 
   const [latitude, setLatitude] = useState(null);
@@ -37,6 +44,12 @@ const App = () => {
     icon:"",
   });
 
+
+
+
+
+
+
   useEffect(() => {
     const weatherApi = async () => {
       const apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${cityWeather}&units=metric&appid=5dc4d0db9fc5256a0ace471a19e48871
@@ -66,6 +79,8 @@ const App = () => {
         sunset: result.sys.sunset,
         icon:result.weather[0].icon,
       });
+
+      
 
       setLoader(false);
     };
@@ -137,7 +152,7 @@ const App = () => {
       style={{
         backgroundImage: `linear-gradient(45deg,
         rgba(0,0,0, 0.5),
-        rgba(0,0,0, 0.5)),url(${weatherBackground})`,
+        rgba(0,0,0, 0.5)),url(${weatherImgs[0].img})`,
       }}
     >
      {error && loader ? (
@@ -160,7 +175,7 @@ const App = () => {
             <LeftSide
               loader={loader}
               data={data}
-              weatherBackground={weatherBackground}
+              weatherBackground={weatherImgs[0].img}
             />
             <RightSide
               loader={loader}
