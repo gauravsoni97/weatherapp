@@ -46,7 +46,7 @@ const WeatherImages = [
   },
   {
     id: 10,
-    img: "./Images/clear.jpg",
+    img: "./Images/clear3.jpg",
     weather: "Clear",
   },
   {
