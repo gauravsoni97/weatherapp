@@ -1,12 +1,12 @@
 const WeatherImages = [
   {
     id: 1,
-    img: "./Images/cloudy.jpg",
+    img: "./Images/haze.jpg",
     weather: "Haze",
   },
   {
     id: 2,
-    img: "./Images/cloudy.jpg",
+    img: "./Images/cloud.png",
     weather: "Clouds",
   },
   {

@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import LeftSide from "./Components/LeftSideUi/LeftSide";
 import RightSide from "./Components/RightSideUi/RightSide";
-import weatherBackground from "./Images/rain.jpg";
 import { CirclesWithBar, Triangle } from "react-loader-spinner";
 import WeatherImages from "./Components/jsonData/weatherImgs";
 
