@@ -5,14 +5,13 @@ import weatherBackground from "./Images/rain.jpg";
 import { CirclesWithBar, Triangle } from "react-loader-spinner";
 import WeatherImages from "./Components/jsonData/weatherImgs";
 
-
 const App = () => {
+  const weatherImgList = WeatherImages;
 
-  const[weatherImgs, setWeatherImgs] = useState(WeatherImages)
+  const [weatherImage, setWeatherImage] = useState('');
 
-  console.log("img from json",weatherImgs[0].img);
+  console.log("img from json", weatherImage);
 
-  
   const [loader, setLoader] = useState(true);
   // ---------- Current location  ----------
 
@@ -29,7 +28,7 @@ const App = () => {
     countryName: "",
     weatherType: "",
     pressure: "",
-    humidity:"",
+    humidity: "",
     lon: "",
     lat: "",
     windSpeed: "",
@@ -41,14 +40,8 @@ const App = () => {
     groundLevel: "",
     sunrise: "",
     sunset: "",
-    icon:"",
+    icon: "",
   });
-
-
-
-
-
-
 
   useEffect(() => {
     const weatherApi = async () => {
@@ -77,8 +70,14 @@ const App = () => {
         groundLevel: result.main.grnd_level,
         sunrise: result.sys.sunrise,
         sunset: result.sys.sunset,
-        icon:result.weather[0].icon,
+        icon: result.weather[0].icon,
       });
+
+      const currentWeatherImage = weatherImgList.filter((elem)=>{
+        return elem.weather === data.weatherType 
+      })
+
+      setWeatherImage(currentWeatherImage);
 
       
 
@@ -90,29 +89,31 @@ const App = () => {
     }, 500);
   }, [cityWeather]);
 
-
   useEffect(() => {
     const getLocation = () => {
       if (navigator.geolocation) {
         setLoader(true); // Show loader initially
-  
+
         const successCallback = (position) => {
           setLatitude(position.coords.latitude);
           setLongitude(position.coords.longitude);
           setLoader(false); // Remove loader on success
         };
-  
+
         const errorCallback = (error) => {
           setError(error.message);
           setLoader(true); // Show loader continuously on error
         };
-  
-        navigator.geolocation.getCurrentPosition(successCallback, errorCallback);
+
+        navigator.geolocation.getCurrentPosition(
+          successCallback,
+          errorCallback
+        );
       } else {
         setError("Geolocation is not supported by your browser.");
       }
     };
-  
+
     getLocation();
   }, []);
 
@@ -152,10 +153,10 @@ const App = () => {
       style={{
         backgroundImage: `linear-gradient(45deg,
         rgba(0,0,0, 0.5),
-        rgba(0,0,0, 0.5)),url(${weatherImgs[0].img})`,
+        rgba(0,0,0, 0.5)),url(${weatherImage[0].img})`,
       }}
     >
-     {error && loader ? (
+      {error && loader ? (
         <>
           <Triangle
             height="80"
@@ -168,14 +169,14 @@ const App = () => {
           />
           Please allow your location for fetching Weather Details
         </>
-      ) : ( 
+      ) : (
         <>
           <div className="blurLayer"></div>
           <div className="weatherapp_sections">
             <LeftSide
               loader={loader}
               data={data}
-              weatherBackground={weatherImgs[0].img}
+              weatherBackground={weatherImage[0].img}
             />
             <RightSide
               loader={loader}
@@ -184,7 +185,7 @@ const App = () => {
             />
           </div>
         </>
-     )} 
+      )}
     </div>
   );
 };
