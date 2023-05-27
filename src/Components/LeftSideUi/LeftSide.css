@@ -9,19 +9,29 @@
 }
 
 
+
 .ShowOutput{
   display: flex;
   align-items:center;
   justify-content: center;
 }
 
+.leftTopSection{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
 .CityDateTime{
-  margin: 1rem  2rem;
+  margin:0 2rem;
 }
 
 .currentWeather{
   position: absolute;
   bottom: 2rem;
+  left: 3rem;
 }
 
 .currentTemp{
@@ -29,6 +39,9 @@
 }
 .currentLocation{
   font-size: 2rem;
+  padding: .3rem 1rem;
+  border-left: 1px solid gray;
+  border-right: 1px solid gray;
 }
 .currentDateAndTime{
   font-size: 1.1rem;
@@ -36,10 +49,25 @@
 }
 
 
-.weatherIcon{
-  font-size: 2rem;
-  
+.weatherType{
+  display: flex;  
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  position: relative;
+  top: -.5rem;
 }
+
+.weatherImage{
+  width: 3.5rem;
+  margin-bottom: .5rem;
+  background-color: rgba(220, 220, 220, 0.07);
+  border-radius: 50%;
+}
+.weatherType p{
+  font-size: .9rem;
+}
+
 
 
 

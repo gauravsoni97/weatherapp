@@ -9,7 +9,10 @@ import {
   Triangle,
 } from "react-loader-spinner";
 
+import Jump from "react-reveal/Jump";
+
 import FilterDramaRoundedIcon from "@mui/icons-material/FilterDramaRounded";
+import { Slide } from "react-reveal";
 
 const LeftSide = ({ weatherBackground, data, loader }) => {
   const currentDate = moment().format("ll");
@@ -29,8 +32,13 @@ const LeftSide = ({ weatherBackground, data, loader }) => {
       }}
     >
       {/* show city temprature time date and weather type */}
+      <div className="leftTopSection">
+        <p>Weather App.</p>
+        <p>
+        {currentTime}  &nbsp;|&nbsp; {currentDate}
+        </p>
+      </div>
 
-      <p>Weather App.</p>
       <div className="currentWeather">
         {loader ? (
           <Triangle
@@ -51,21 +59,17 @@ const LeftSide = ({ weatherBackground, data, loader }) => {
 
               <div className="CityDateTime">
                 <h2 className="currentLocation">{data.cityName}</h2>
-
-                <p className="currentDateAndTime">
-                  {currentDate} &nbsp;|&nbsp; {currentTime}
-                </p>
               </div>
 
               <div className="weatherType">
-                <span className="weatherIcon">
-                  <img 
-                    src={`https://openweathermap.org/img/wn/${data.icon}@2x.png`}
-                    alt="icon"
-                  />
-                </span>{" "}
-                <br />
-                <p>{data.weatherType}</p>
+                <img
+                  className="weatherImage"
+                  src={`https://openweathermap.org/img/wn/${data.icon}@2x.png`}
+                  alt="icon"
+                />
+                <Slide bottom>
+                  <p>{data.weatherType}</p>
+                </Slide>
               </div>
             </div>
           </>
