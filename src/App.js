@@ -8,7 +8,7 @@ import WeatherImages from "./Components/jsonData/weatherImgs";
 const App = () => {
   const weatherImgList = WeatherImages;
 
-  const [weatherImage, setWeatherImage] = useState('');
+  const [weatherImage, setWeatherImage] = useState("");
 
   console.log("img from json", weatherImage);
 
@@ -73,20 +73,17 @@ const App = () => {
         icon: result.weather[0].icon,
       });
 
-      const currentWeatherImage = weatherImgList.filter((elem)=>{
-        return elem.weather === data.weatherType 
-      })
-
-      setWeatherImage(currentWeatherImage);
-
-      
-
       setLoader(false);
     };
     setLoader(true);
-    setTimeout(() => {
-      weatherApi();
-    }, 500);
+
+    const currentWeatherImage = weatherImgList.filter((elem) => {
+      return elem.weather === data.weatherType;
+    });
+
+    setWeatherImage(currentWeatherImage[0].img);
+
+    weatherApi();
   }, [cityWeather]);
 
   useEffect(() => {
@@ -153,7 +150,7 @@ const App = () => {
       style={{
         backgroundImage: `linear-gradient(45deg,
         rgba(0,0,0, 0.5),
-        rgba(0,0,0, 0.5)),url(${weatherImage[0].img})`,
+        rgba(0,0,0, 0.5)),url(${weatherImage})`,
       }}
     >
       {error && loader ? (
@@ -176,7 +173,7 @@ const App = () => {
             <LeftSide
               loader={loader}
               data={data}
-              weatherBackground={weatherImage[0].img}
+              weatherBackground={weatherImage}
             />
             <RightSide
               loader={loader}
