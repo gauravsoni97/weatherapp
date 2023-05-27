@@ -11,6 +11,7 @@ const RightSide = ({ setCityWeather, data, loader }) => {
     countryName,
     weatherType,
     pressure,
+    humidity,
     lon,
     lat,
     windSpeed,
@@ -34,6 +35,7 @@ const RightSide = ({ setCityWeather, data, loader }) => {
     { id: 4, text: "Weather", value: `${weatherType}` },
 
     { id: 5, text: "Pressure", value: `${pressure} mb` },
+    { id: 17, text: "Humidity", value: `${humidity} %` },
 
     { id: 6, text: "Longitude", value: `${lon}` },
 

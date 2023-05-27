@@ -22,6 +22,7 @@ const App = () => {
     countryName: "",
     weatherType: "",
     pressure: "",
+    humidity:"",
     lon: "",
     lat: "",
     windSpeed: "",
@@ -33,6 +34,7 @@ const App = () => {
     groundLevel: "",
     sunrise: "",
     sunset: "",
+    icon:"",
   });
 
   useEffect(() => {
@@ -50,6 +52,7 @@ const App = () => {
         countryName: result.sys.country,
         weatherType: result.weather[0].main,
         pressure: result.main.pressure,
+        humidity: result.main.humidity,
         lon: result.coord.lon,
         lat: result.coord.lat,
         windSpeed: result.wind.speed,
@@ -61,10 +64,10 @@ const App = () => {
         groundLevel: result.main.grnd_level,
         sunrise: result.sys.sunrise,
         sunset: result.sys.sunset,
+        icon:result.weather[0].icon,
       });
 
       setLoader(false);
-      console.log("data from state", data);
     };
     setLoader(true);
     setTimeout(() => {

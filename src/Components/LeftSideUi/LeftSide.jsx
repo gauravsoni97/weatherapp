@@ -9,7 +9,7 @@ import {
   Triangle,
 } from "react-loader-spinner";
 
-import FilterDramaRoundedIcon from '@mui/icons-material/FilterDramaRounded';
+import FilterDramaRoundedIcon from "@mui/icons-material/FilterDramaRounded";
 
 const LeftSide = ({ weatherBackground, data, loader }) => {
   const currentDate = moment().format("ll");
@@ -58,7 +58,13 @@ const LeftSide = ({ weatherBackground, data, loader }) => {
               </div>
 
               <div className="weatherType">
-                <span className="weatherIcon"><FilterDramaRoundedIcon/></span> <br />
+                <span className="weatherIcon">
+                  <img 
+                    src={`https://openweathermap.org/img/wn/${data.icon}@2x.png`}
+                    alt="icon"
+                  />
+                </span>{" "}
+                <br />
                 <p>{data.weatherType}</p>
               </div>
             </div>
