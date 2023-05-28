@@ -71,7 +71,7 @@ body{
 
 
 
-@media screen and (max-width:600px) {
+@media screen and (max-width:900px) {
   .weatherapp_sections{
     display: flex;
     flex-direction: column;
@@ -80,6 +80,7 @@ body{
     width: 100vw;
     height: 100vh;
     z-index: 3;
+    overflow: hidden;
   }
   
   

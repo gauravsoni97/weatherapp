@@ -72,33 +72,93 @@
 
 
 
+@media screen and (max-width:900px) {
+  .weatherBackground {
+    width: 100vw;
+   min-height: 40vh;
+    padding: 2rem;
+  }
+  .currentWeather{
+    width: 100%;
+    margin: 0 auto;
+    height: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;    
+    left: 50%;
+    bottom: 50%;
+    transform: translate(-50% , 50%);
+    
+  }
+
+
+  .currentTemp{
+    font-size: 4rem;
+  }
+  .currentLocation{
+    font-size: 2rem;
+  }
+
+ 
+
+  
+  
+  
+}
 @media screen and (max-width:600px) {
   .weatherBackground {
     width: 100vw;
-    height: 60%;
-    padding: 1rem;
+   min-height: 30vh;
+    padding: 2rem;
   }
+  .currentWeather{
+    width: 100%;
+    margin: 0 auto;
+    height: 100%;
+
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-start;
+    position: absolute;    
+    left: 5%;
+    bottom: 5%;
+    transform: translate(0% , 0%);
+    
+  }
+.ShowOutput{
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-direction: column;
+}
 
   .currentTemp{
-    font-size: 3rem;
-    text-shadow: 0 0 10px rgba(0, 0, 0, 0.301);
+    font-size:3rem;
   }
   .currentLocation{
-    margin:  0rem;
-    margin-bottom: 1rem;
     font-size: 1.5rem;
+    border: 0 ;
+    margin: 1rem 0;
+    padding: 0;
   }
 
-  .currentWeather{
-    position: absolute;
-    bottom: 3rem;
-    left: 2rem;
-    display: flex;
-    align-items: flex-start;
-    justify-content: center;
-    flex-direction: column;
+
+  .leftTopSection p {
+    font-size: .9rem;
   }
-  
+
+  .weatherImage {
+    margin-top: .5rem;
+    width: 3rem;
+  }
+ 
+
+  .CityDateTime{
+    margin: 0 0;
+    padding: 0;
+  }
 
   
   

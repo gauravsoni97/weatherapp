@@ -83,14 +83,16 @@
 }
 
 
-@media screen and (max-width:600px) {
+@media screen and (max-width:900px) {
   .rightSide {
     width: 100vw;
   }
+
+
   
   
 .WeatherDetails{
-  max-height: 40vh;
+  max-height: 35vh;
   overflow: auto;
   overflow-x: hidden;
   padding-right: 1rem;
