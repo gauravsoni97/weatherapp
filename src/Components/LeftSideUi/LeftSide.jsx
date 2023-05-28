@@ -12,7 +12,7 @@ import {
 import Jump from "react-reveal/Jump";
 
 import FilterDramaRoundedIcon from "@mui/icons-material/FilterDramaRounded";
-import { Slide } from "react-reveal";
+import { Slide, Fade } from "react-reveal";
 
 const LeftSide = ({ weatherBackground, data, loader }) => {
   const currentDate = moment().format("ll");
@@ -33,10 +33,14 @@ const LeftSide = ({ weatherBackground, data, loader }) => {
     >
       {/* show city temprature time date and weather type */}
       <div className="leftTopSection">
-        <p>Weather App.</p>
-        <p>
-        {currentTime}  &nbsp;|&nbsp; {currentDate}
-        </p>
+        <Slide top>
+          <p>Weather App.</p>
+        </Slide>
+        <Slide top>
+          <p>
+            {currentTime} &nbsp;|&nbsp; {currentDate}
+          </p>
+        </Slide>
       </div>
 
       <div className="currentWeather">
@@ -54,22 +58,29 @@ const LeftSide = ({ weatherBackground, data, loader }) => {
           <>
             <div className="ShowOutput">
               <div>
-                <h1 className="currentTemp"> {Math.round(data.temp)}°c</h1>
+                <Fade bottom>
+                  <h1 className="currentTemp"> {Math.round(data.temp)}°c</h1>
+                </Fade>
               </div>
 
               <div className="CityDateTime">
-                <h2 className="currentLocation">{data.cityName}, {data.countryName}</h2>
+                <Fade bottom>
+                  <h2 className="currentLocation">
+                    {data.cityName}, {data.countryName}
+                  </h2>
+                </Fade>
               </div>
 
               <div className="weatherType">
-                <img
-                  className="weatherImage"
-                  src={`https://openweathermap.org/img/wn/${data.icon}@2x.png`}
-                  alt="icon"
-                />
-                <Slide bottom>
+                <Fade bottom>
+                  <img
+                    className="weatherImage"
+                    src={`https://openweathermap.org/img/wn/${data.icon}@2x.png`}
+                    alt="icon"
+                  />
+
                   <p>{data.weatherType}</p>
-                </Slide>
+                </Fade>
               </div>
             </div>
           </>

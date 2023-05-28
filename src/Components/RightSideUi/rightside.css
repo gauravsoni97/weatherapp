@@ -27,6 +27,11 @@
   color: #ffffff;
   font-size: 1rem;
 }
+.searchBar::placeholder{
+  color: rgba(255, 255, 255, 0.733);
+  font-size: .9rem;
+
+}
 
 .searchButton {
   padding: 1.3rem;

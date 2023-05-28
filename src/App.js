@@ -3,6 +3,7 @@ import LeftSide from "./Components/LeftSideUi/LeftSide";
 import RightSide from "./Components/RightSideUi/RightSide";
 import { CirclesWithBar, Triangle } from "react-loader-spinner";
 import WeatherImages from "./Components/jsonData/weatherImgs";
+import { Fade } from "@mui/material";
 
 const App = () => {
   const weatherImgList = WeatherImages;
@@ -167,7 +168,7 @@ const App = () => {
             wrapperClassName=""
             visible={true}
           />
-          Please allow your location for fetching Weather Details
+            <p style={{color:"white"}}>Please allow your location for fetching Weather Details</p>
         </>
       ) : (
         <>

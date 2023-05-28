@@ -3,6 +3,7 @@ import "./rightside.css";
 import SearchRoundedIcon from "@mui/icons-material/SearchRounded";
 import moment from "moment/moment";
 import { MutatingDots, Puff, ThreeDots, Triangle } from "react-loader-spinner";
+import { Fade, Slide } from "react-reveal";
 
 const RightSide = ({ setCityWeather, data, loader }) => {
   const {
@@ -84,7 +85,7 @@ const RightSide = ({ setCityWeather, data, loader }) => {
             value={inputValue}
             onChange={(e) => setInputValue(e.target.value)}
             className="searchBar"
-            placeholder="Search City"
+            placeholder="Search city here..."
             type="search"
             required
             autoComplete="off"
@@ -95,27 +96,33 @@ const RightSide = ({ setCityWeather, data, loader }) => {
         </div>
       </form>
       <div className="weatherDetailsSection">
-        <p className="weatherDetailsTxt">Weather Details</p>
+        <Fade bottom>
+          <p className="weatherDetailsTxt">Weather Details</p>
+        </Fade>
         <div className="WeatherDetails">
-          {dataToShow.map((ele , idx) => {
+          {dataToShow.map((ele, idx) => {
             const { id, text, value } = ele;
             return (
               <>
                 <div className="details_list" key={idx}>
-                  <span>{text}</span>
+                  <Fade bottom>
+                    <span>{text}</span>
+                  </Fade>
                   {loader ? (
-                 <Puff
-                 height="10"
-                 width="10"
-                 radius={1}
-                 color="gray"
-                 ariaLabel="puff-loading"
-                 wrapperStyle={{}}
-                 wrapperClass=""
-                 visible={true}
-               />
+                    <Puff
+                      height="10"
+                      width="10"
+                      radius={1}
+                      color="gray"
+                      ariaLabel="puff-loading"
+                      wrapperStyle={{}}
+                      wrapperClass=""
+                      visible={true}
+                    />
                   ) : (
-                    <span>{value}</span>
+                    <Fade bottom>
+                      <span>{value}</span>
+                    </Fade>
                   )}
                 </div>
               </>
