@@ -37,8 +37,9 @@ const LeftSide = ({ weatherBackground, data, loader }) => {
           <p>Weather App.</p>
         </Slide>
         <Slide top>
-          <p>
-            {currentTime} &nbsp;|&nbsp; {currentDate}
+          <p className="currentDnT">
+            <span>{currentTime}</span>
+            <span className="currentTimeTxt">{currentDate}</span>
           </p>
         </Slide>
       </div>

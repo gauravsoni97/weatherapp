@@ -8,15 +8,13 @@
   position: relative;
 }
 
-
-
-.ShowOutput{
+.ShowOutput {
   display: flex;
-  align-items:center;
+  align-items: center;
   justify-content: center;
 }
 
-.leftTopSection{
+.leftTopSection {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -24,61 +22,69 @@
   gap: 1rem;
 }
 
-.CityDateTime{
-  margin:0 2rem;
+.CityDateTime {
+  margin: 0 2rem;
 }
 
-.currentWeather{
+.currentWeather {
   position: absolute;
   bottom: 2rem;
   left: 3rem;
 }
 
-.currentTemp{
+.currentTemp {
   font-size: 5rem;
 }
-.currentLocation{
+.currentLocation {
   font-size: 2rem;
-  padding: .3rem 1rem;
+  padding: 0.3rem 1rem;
   border-left: 1px solid gray;
   border-right: 1px solid gray;
 }
-.currentDateAndTime{
+.currentDateAndTime {
   font-size: 1.1rem;
-  margin-top: .3rem;
+  margin-top: 0.3rem;
 }
 
-
-.weatherType{
-  display: flex;  
+.weatherType {
+  display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
   position: relative;
-  top: -.5rem;
+  top: -0.5rem;
 }
 
-.weatherImage{
+.weatherImage {
   width: 3.5rem;
-  margin-bottom: .5rem;
+  margin-bottom: 0.5rem;
   background-color: rgba(220, 220, 220, 0.283);
   border: 1px solid rgba(255, 255, 255, 0.491);
   border-radius: 50%;
 }
-.weatherType p{
-  font-size: .9rem;
+.weatherType p {
+  font-size: 0.9rem;
 }
 
+.currentDnT {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
 
+.currentTimeTxt {
+  border-left: 2px solid white;
+  padding-left: 0.5rem;
+}
 
-
-@media screen and (max-width:900px) {
+@media screen and (max-width: 900px) {
   .weatherBackground {
     width: 100vw;
-   min-height: 40vh;
+    height: 35vh;
     padding: 2rem;
   }
-  .currentWeather{
+  .currentWeather {
     width: 100%;
     margin: 0 auto;
     height: 100%;
@@ -86,34 +92,26 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    position: absolute;    
+    position: absolute;
     left: 50%;
     bottom: 50%;
-    transform: translate(-50% , 50%);
-    
+    transform: translate(-50%, 50%);
   }
 
-
-  .currentTemp{
+  .currentTemp {
     font-size: 4rem;
   }
-  .currentLocation{
+  .currentLocation {
     font-size: 2rem;
   }
-
- 
-
-  
-  
-  
 }
-@media screen and (max-width:600px) {
+@media screen and (max-width: 600px) {
   .weatherBackground {
     width: 100vw;
-   min-height: 30vh;
+    height: 40vh;
     padding: 2rem;
   }
-  .currentWeather{
+  .currentWeather {
     width: 100%;
     margin: 0 auto;
     height: 100%;
@@ -121,46 +119,75 @@
     display: flex;
     align-items: flex-end;
     justify-content: flex-start;
-    position: absolute;    
+    position: absolute;
     left: 5%;
     bottom: 5%;
-    transform: translate(0% , 0%);
-    
+    transform: translate(0%, 0%);
   }
-.ShowOutput{
-  display: flex;
-  align-items: flex-start;
-  justify-content: flex-start;
-  flex-direction: column;
-}
+  .ShowOutput {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-direction: column-reverse;
+  }
 
-  .currentTemp{
-    font-size:3rem;
+  .currentTemp {
+    font-size: 4rem;
   }
-  .currentLocation{
-    font-size: 1.5rem;
-    border: 0 ;
-    margin: 1rem 0;
+  .currentLocation {
+    font-size: 1.2rem;
+    border: 0;
+    margin: 0.5rem 0;
+    margin-bottom: 0;
     padding: 0;
   }
 
-
   .leftTopSection p {
-    font-size: .9rem;
+    font-size: 0.9rem;
   }
 
   .weatherImage {
-    margin-top: .5rem;
+    margin-top: 0.5rem;
     width: 3rem;
   }
- 
 
-  .CityDateTime{
+  .CityDateTime {
     margin: 0 0;
     padding: 0;
   }
 
-  
-  
-  
+  .leftTopSection {
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+    flex-direction: column;
+    gap: 0.5rem;
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+  }
+
+  .currentDnT {
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+    flex-direction: column-reverse;
+    gap: 0.5rem;
+  }
+
+  .currentDnT span {
+    font-size: 0.8rem;
+  }
+  .currentTimeTxt {
+    border-left: 0px solid white;
+    padding-left: 0rem;
+  }
+
+  .weatherDetailsSection {
+    padding: 1rem 0 1rem 1.5rem !important;
+  }
+
+  .WeatherDetails {
+    padding-right: 1.6rem !important;
+  }
 }
