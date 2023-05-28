@@ -107,23 +107,22 @@ const RightSide = ({ setCityWeather, data, loader }) => {
                 <div className="details_list" key={idx}>
                   <Fade bottom>
                     <span>{text}</span>
-                  </Fade>
-                  {loader ? (
-                    <Puff
-                      height="10"
-                      width="10"
-                      radius={1}
-                      color="gray"
-                      ariaLabel="puff-loading"
-                      wrapperStyle={{}}
-                      wrapperClass=""
-                      visible={true}
-                    />
-                  ) : (
-                    <Fade bottom>
+
+                    {loader ? (
+                      <Puff
+                        height="10"
+                        width="10"
+                        radius={1}
+                        color="gray"
+                        ariaLabel="puff-loading"
+                        wrapperStyle={{}}
+                        wrapperClass=""
+                        visible={true}
+                      />
+                    ) : (
                       <span>{value}</span>
-                    </Fade>
-                  )}
+                    )}
+                  </Fade>
                 </div>
               </>
             );
